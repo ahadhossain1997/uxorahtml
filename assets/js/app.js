@@ -1,9 +1,6 @@
 "use strict";
 
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -11,6 +8,9 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 (function ($) {
   "use strict";
 
@@ -121,36 +121,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     }
 
     /*--------------------------------------------------------------
-    LONYO BRAND SLIDER INIT
+    LONYO TESTIMONIAL SLIDER INIT
     --------------------------------------------------------------*/
-    var brand_slider = $('.brand-slider-js-init');
-    if (brand_slider.is_exist()) {
-      brand_slider.slick({
-        slidesToShow: 7,
+    var T_slider = $('.uxora-t-slider-init');
+    if (T_slider.is_exist()) {
+      T_slider.slick(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
+        slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 0,
-        speed: 5000,
-        arrows: false,
-        pauseOnHover: false,
-        cssEase: 'linear',
-        responsive: [{
-          breakpoint: 1699,
-          settings: {
-            slidesToShow: 5
-          }
-        }, {
-          breakpoint: 1399,
-          settings: {
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
-      });
+        autoplay: false,
+        arrows: true
+      }, "slidesToScroll", 1), "infinite", true), "speed", 1000), "lazyLoad", 'progressive'), "prevArrow", '<button class="slide-arrow uxora-t-slider-next"></button>'), "nextArrow", '<button class="slide-arrow uxora-t-slider-prev"></button>'));
     }
 
     /*--------------------------------------------------------------
@@ -226,110 +206,86 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     });
 
     /*--------------------------------------------------------------
-    LONYO  TESTIMONIAL SLIDER JS INIT
+    LONYO  PORTFOLIO SLIDER JS INIT
     --------------------------------------------------------------*/
-    var t_slider = $('.uxora-testimonial-slider-init');
-    if (t_slider.is_exist()) {
-      t_slider.slick({
-        slidesToShow: 4,
+
+    var p_slider_data = $('.uxora-p-slider-init');
+    if (p_slider_data.is_exist()) {
+      p_slider_data.slick({
+        slidesToShow: 3,
         slidesToScroll: 1,
-        dots: false,
         autoplay: true,
         autoplaySpeed: 0,
-        speed: 6000,
+        speed: 5000,
         arrows: false,
         pauseOnHover: false,
         cssEase: 'linear',
-        centerPadding: '180px',
-        lazyLoad: 'progressive',
         responsive: [{
-          breakpoint: 1199,
+          breakpoint: 1399,
           settings: {
             slidesToShow: 2
           }
         }, {
           breakpoint: 767,
           settings: {
-            slidesToShow: 1,
-            centerPadding: '100px'
-          }
-        }, {
-          breakpoint: 575,
-          settings: {
-            slidesToShow: 1,
-            centerPadding: '0px'
+            slidesToShow: 1
           }
         }]
       });
     }
-    var testimonial_slider_data = $('.uxora-slider-icon-data');
+    var testimonial_slider_data = $('.uxora-p-slider-init2');
     if (testimonial_slider_data.is_exist()) {
       testimonial_slider_data.slick({
-        slidesToShow: 6,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 0,
         speed: 5000,
+        autoplaySpeed: 0,
         arrows: false,
+        rtl: true,
         pauseOnHover: false,
         cssEase: 'linear',
         responsive: [{
           breakpoint: 1399,
           settings: {
-            slidesToShow: 5
-          }
-        }, {
-          breakpoint: 1199,
-          settings: {
-            slidesToShow: 4
-          }
-        }, {
-          breakpoint: 991,
-          settings: {
-            slidesToShow: 3
+            slidesToShow: 2
           }
         }, {
           breakpoint: 767,
           settings: {
-            slidesToShow: 2
+            slidesToShow: 1
           }
         }]
       });
     }
-    var testimonial_slider_data_wrap = $('.uxora-slider-icon-data2');
-    if (testimonial_slider_data_wrap.is_exist()) {
-      testimonial_slider_data_wrap.slick({
-        slidesToShow: 6,
+    var brand_slider = $('.techin-brand-slider');
+    if (brand_slider.is_exist()) {
+      brand_slider.slick(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
+        slidesToShow: 5,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 0,
-        speed: 5000,
-        arrows: false,
-        pauseOnHover: false,
-        cssEase: 'linear',
-        rtl: true,
-        responsive: [{
-          breakpoint: 1399,
-          settings: {
-            slidesToShow: 5
-          }
-        }, {
-          breakpoint: 1199,
-          settings: {
-            slidesToShow: 4
-          }
-        }, {
-          breakpoint: 991,
-          settings: {
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
-      });
+        autoplay: false,
+        arrows: true
+      }, "slidesToScroll", 1), "infinite", true), "speed", 500), "centerMode", true), "lazyLoad", 'progressive'), "prevArrow", '<button class="slide-arrow techin-brand-next"></button>'), "nextArrow", '<button class="slide-arrow techin-brand-prev"></button>'), "responsive", [{
+        breakpoint: 1399,
+        settings: {
+          slidesToShow: 4
+        }
+      }, {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3
+        }
+      }, {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2
+        }
+      }, {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1
+        }
+      }]));
     }
 
     /*--------------------------------------------------------------
