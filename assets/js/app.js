@@ -587,7 +587,7 @@ if (uxora_filter_gallery.is_exist()) {
         columnNum = 2;
       } else if (w > 900) {
         columnNum = 2;
-      } else if (w > 600) {
+      } else if (w > 1200) {
         columnNum = 2;
       } else if (w > 450) {
         columnNum = 1;
