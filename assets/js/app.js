@@ -52,17 +52,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     // $(".uxora-preloader-wrap").fadeOut(500);
 
     /*--------------------------------------------------------------
-    LONYO STICKY MENU JS INIT
-    --------------------------------------------------------------*/
-    $(window).on('scroll', function () {
-      if ($(window).scrollTop() > 50) {
-        $('#sticky-menu').addClass('sticky-menu');
-      } else {
-        $('#sticky-menu').removeClass('sticky-menu');
-      }
-    });
-
-    /*--------------------------------------------------------------
     LONYO MENU SIDEBAR JS INIT
     --------------------------------------------------------------*/
     $(".uxora-header-triger").on("click", function (e) {
@@ -108,17 +97,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       }, duration);
       return false;
     });
-
-    /*--------------------------------------------------------------
-    LONYO MAGNIFIC PUPOP JS INIT
-    --------------------------------------------------------------*/
-    var popup_youtube = $('.video-init');
-    if (popup_youtube.is_exist()) {
-      popup_youtube.magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade'
-      });
-    }
 
     /*--------------------------------------------------------------
     LONYO TESTIMONIAL SLIDER INIT
@@ -204,6 +182,16 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       window.addEventListener("scroll", activate);
       activate();
     });
+    var $items = $(".uxora-process-wrap");
+    if ($items.length) {
+      $items.on("mouseover", function () {
+        // Remove 'hovered' class from all items
+        $items.removeClass("hovered");
+
+        // Add 'hovered' class to the current item
+        $(this).addClass("hovered");
+      });
+    }
 
     /*--------------------------------------------------------------
     LONYO  PORTFOLIO SLIDER JS INIT
