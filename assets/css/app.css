@@ -2071,7 +2071,7 @@ a.uxora-header-info img {
   color: var(--heading-color);
 }
 .main-menu > ul > li {
-  margin: 0 20px;
+  margin: 0 17px;
 }
 @media (max-width: 1199px) {
   .main-menu > ul > li {
@@ -2144,6 +2144,10 @@ a.uxora-header-info img {
 }
 .main-menu ul.sub-menu li.menu-item-has-children a.no-border {
   display: block;
+}
+.main-menu ul.sub-menu li.menu-item-has-children a.no-border::after {
+  position: absolute;
+  right: 0;
 }
 .main-menu ul.sub-menu li.menu-item-has-children a.no-border::before {
   content: none;
@@ -2555,7 +2559,7 @@ a.light-color {
 }
 .uxora-hero-shape2 {
   position: absolute;
-  bottom: -100px;
+  bottom: -30px;
   left: -30%;
   z-index: -1;
 }
@@ -2785,9 +2789,10 @@ a.light-color {
 }
 
 .uxora-t-wrap {
-  display: flex !important;
-  gap: 15%;
+  display: grid !important;
+  gap: 135px;
   align-items: center;
+  grid-template-columns: 416px 1fr;
 }
 @media (max-width: 1199px) {
   .uxora-t-wrap {
@@ -3152,11 +3157,12 @@ a.light-color {
 .uxora-p-thumb {
   position: relative;
   display: block;
-  margin: 0 15px 24px;
   text-align: center;
   overflow: hidden;
   border-radius: 10px;
   white-space: nowrap;
+  margin-bottom: 24px;
+  margin-left: 24px;
 }
 .uxora-p-thumb img {
   border-radius: 10px;
@@ -3301,12 +3307,12 @@ a.light-color {
   border: 2px solid var(--accent-color);
 }
 
-.collection-grid-item {
-  width: 100% !important;
-  opacity: 1 !important;
+.uxora-portfolio-column {
+  margin-left: -24px;
 }
-.collection-grid-item.item2 {
-  width: 50% !important;
+
+ul#watch-filter-gallery li {
+  cursor: pointer;
 }
 
 .uxora-faq-item {
@@ -3344,38 +3350,6 @@ a.light-color {
   top: 110px;
 }
 
-.lonyo-tab-section {
-  position: relative;
-  background-color: var(--heading-color);
-}
-.lonyo-tab-section::before {
-  top: 50%;
-  left: 40px;
-  width: 150px;
-  height: 150px;
-  content: "";
-  position: absolute;
-  transform: translatey(0);
-  -webkit-animation: updown 3s ease-in-out infinite;
-  animation: updown 3s ease-in-out infinite;
-  border-radius: 100px;
-  background: linear-gradient(48.01deg, #A3BDFF -82.43%, #142D6F 89.75%);
-}
-@media (max-width: 1800px) {
-  .lonyo-tab-section::before {
-    display: none;
-  }
-}
-.lonyo-tab-section h2 {
-  color: var(--light-color);
-}
-.lonyo-tab-wrap ul li {
-  color: var(--light-color);
-}
-.lonyo-tab-wrap ul li h4 {
-  color: var(--light-color);
-}
-
 .tabs {
   display: flex;
   align-items: center;
@@ -3401,12 +3375,21 @@ a.light-color {
   padding: 18px 24px;
   border-radius: 50px;
   cursor: pointer;
+  transition: all 0.4s;
   border: 2px solid var(--heading-color);
 }
-.tabs li.active-tab {
+.tabs li.current {
   border: 2px solid var(--accent-color);
   color: var(--light-color);
   background-color: var(--accent-color);
+}
+
+.uxora-tab-content {
+  display: none;
+}
+
+.uxora-tab-content.current {
+  display: inherit;
 }
 
 .uxora-pricing-wrap {
@@ -3873,6 +3856,10 @@ a.light-color {
   padding: 30px;
   border-radius: 20px;
 }
+.uxora-blog-widgets:first-child {
+  padding: 0;
+  background-color: transparent;
+}
 .uxora-blog-widgets:last-child {
   margin-bottom: 0;
 }
@@ -3920,6 +3907,16 @@ a.light-color {
   gap: 15px;
   margin-bottom: 24px;
 }
+@media (max-width: 1399px) {
+  .uxora-blog-recent-post-item {
+    display: block;
+  }
+}
+@media (max-width: 991px) {
+  .uxora-blog-recent-post-item {
+    display: flex;
+  }
+}
 .uxora-blog-recent-post-item:last-child {
   margin-bottom: 0;
 }
@@ -3934,6 +3931,16 @@ a.light-color {
   overflow: hidden;
   flex-shrink: 0;
   transition: all 0.4s;
+}
+@media (max-width: 1399px) {
+  .uxora-blog-recent-post-thumb {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .uxora-blog-recent-post-thumb {
+    margin-bottom: 0;
+  }
 }
 .uxora-blog-recent-post-thumb img {
   width: 100%;
@@ -4145,7 +4152,7 @@ a.light-color {
 .uxora-search-box input {
   font-size: 16px;
   line-height: 24px;
-  padding: 12px 0 12px 24px;
+  padding: 12px 0 12px 24px !important;
 }
 
 button#uxora-search-btn {
@@ -4313,7 +4320,6 @@ blockquote span {
 
 .uxora-process-wrap {
   position: relative;
-  padding: 30px 20px;
   border-radius: 10px;
   transition: all 0.4s;
 }
@@ -4349,8 +4355,8 @@ blockquote span {
   }
 }
 
-.uxora-process-wrap.hovered {
-  box-shadow: 0 4px 80px 0 rgba(0, 0, 0, 0.0784313725);
+.pt-30 {
+  padding-top: 30px;
 }
 
 .uxora-hero-section {
