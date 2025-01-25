@@ -15,8 +15,8 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   UXORA MENU SIDEBAR JS INIT
   UXORA PROGRES CIRCLE JS INIT
   UXORA TSTIMONIAL SLIDER INIT
-  UXORA AOS ANIMATION JS INIT
   UXORA PORTFOLIO MASONAY FILTER JS
+  UXORA TAB CONTENT JS
   UXORA TOGGLE PASSOWRD JS INIT
   
   
@@ -86,7 +86,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       slidesToScroll: 1,
       autoplay: false,
       arrows: true
-    }, "slidesToScroll", 1), "infinite", true), "speed", 1000), "lazyLoad", 'progressive'), "prevArrow", '<button class="slide-arrow uxora-t-slider-next"></button>'), "nextArrow", '<button class="slide-arrow uxora-t-slider-prev"></button>'));
+    }, "slidesToScroll", 1), "infinite", true), "speed", 1500), "lazyLoad", 'progressive'), "prevArrow", '<button class="slide-arrow uxora-t-slider-next"></button>'), "nextArrow", '<button class="slide-arrow uxora-t-slider-prev"></button>'));
   }
 
   /*--------------------------------------------------------------
@@ -142,53 +142,17 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       }]
     });
   }
-  /*--------------------------------------------------------------
-  UXORA BRAND SLIDER JS INIT
-  --------------------------------------------------------------*/
-
-  var brand_slider = $('.techin-brand-slider');
-  if (brand_slider.is_exist()) {
-    brand_slider.slick(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      autoplay: false,
-      arrows: true
-    }, "slidesToScroll", 1), "infinite", true), "speed", 500), "centerMode", true), "lazyLoad", 'progressive'), "prevArrow", '<button class="slide-arrow techin-brand-next"></button>'), "nextArrow", '<button class="slide-arrow techin-brand-prev"></button>'), "responsive", [{
-      breakpoint: 1399,
-      settings: {
-        slidesToShow: 4
-      }
-    }, {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 3
-      }
-    }, {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 2
-      }
-    }, {
-      breakpoint: 575,
-      settings: {
-        slidesToShow: 1
-      }
-    }]));
-  }
   $(function () {
+
     /*--------------------------------------------------------------
     UXORA AOS ANIMATION JS INIT
     --------------------------------------------------------------*/
-
-    AOS.init({
-      once: true // Ensure animations can trigger multiple times
-    });
   }); /*End document ready*/
 
   $(window).on("resize", function () {}); // end window resize
 
   /*--------------------------------------------------------------
-  UXORA AOS ANIMATION JS INIT
+  UXORA TAB CONTENT JS INIT
   --------------------------------------------------------------*/
 
   $('ul.tabs li').click(function () {
@@ -300,7 +264,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   =============================================*/
   $(window).on("load", function () {
     preloader();
-    wowAnimation();
   });
 
   /*===========================================
@@ -335,3 +298,28 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     }
   });
 })(jQuery);
+
+/* sticky header */
+var lastScroll = 0;
+function sticky_header() {
+  var header_hegith = $('header').innerHeight();
+  var scroll = $(window).scrollTop();
+  if (scroll > header_hegith && scroll > lastScroll) {
+    $('header').addClass('hide-header');
+  } else if (scroll < lastScroll) {
+    $('header').removeClass('hide-header');
+  }
+  lastScroll = scroll;
+}
+$(function () {
+  sticky_header();
+});
+window.onload = function () {
+  sticky_header();
+};
+window.onscroll = function () {
+  sticky_header();
+};
+window.onresize = function (event) {
+  sticky_header();
+};
