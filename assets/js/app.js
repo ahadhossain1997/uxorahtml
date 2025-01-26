@@ -12,6 +12,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   
   UXORA PRELOADER JS INIT
   UXORA HEADER TRIGER JS INIT
+  UXORA HEADER STICKY MENU JS INIT
   UXORA MENU SIDEBAR JS INIT
   UXORA PROGRES CIRCLE JS INIT
   UXORA TSTIMONIAL SLIDER INIT
@@ -39,6 +40,34 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   $(".uxora-sidemenu-close, .offcanvas-overlay").on("click", function () {
     $(".uxora-sidemenu-column, .offcanvas-overlay").removeClass("active");
   });
+
+  /*--------------------------------------------------------------
+    UXORA STICKY MENU JS INIT
+  --------------------------------------------------------------*/
+
+  var lastScroll = 0;
+  function sticky_header() {
+    var header_hegith = $('header').innerHeight();
+    var scroll = $(window).scrollTop();
+    if (scroll > header_hegith && scroll > lastScroll) {
+      $('header').addClass('hide-header');
+    } else if (scroll < lastScroll) {
+      $('header').removeClass('hide-header');
+    }
+    lastScroll = scroll;
+  }
+  $(function () {
+    sticky_header();
+  });
+  window.onload = function () {
+    sticky_header();
+  };
+  window.onscroll = function () {
+    sticky_header();
+  };
+  window.onresize = function (event) {
+    sticky_header();
+  };
 
   /*--------------------------------------------------------------
   UXORA PROGRES CIRCLE JS INIT
@@ -298,28 +327,3 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     }
   });
 })(jQuery);
-
-/* sticky header */
-var lastScroll = 0;
-function sticky_header() {
-  var header_hegith = $('header').innerHeight();
-  var scroll = $(window).scrollTop();
-  if (scroll > header_hegith && scroll > lastScroll) {
-    $('header').addClass('hide-header');
-  } else if (scroll < lastScroll) {
-    $('header').removeClass('hide-header');
-  }
-  lastScroll = scroll;
-}
-$(function () {
-  sticky_header();
-});
-window.onload = function () {
-  sticky_header();
-};
-window.onscroll = function () {
-  sticky_header();
-};
-window.onresize = function (event) {
-  sticky_header();
-};

@@ -2129,7 +2129,7 @@ a.uxora-header-info img {
   text-align: left;
   visibility: hidden;
   min-width: 220px;
-  border-radius: 0 0 6px 6px;
+  border-radius: 6px;
 }
 .main-menu ul.sub-menu li {
   padding: 5px 10px 5px 20px;
@@ -2377,6 +2377,7 @@ a.light-color {
   z-index: 10;
   text-align: center;
   transition: transform 0.5s ease;
+  background-color: var(--light-color2);
 }
 
 header.hide-header {
