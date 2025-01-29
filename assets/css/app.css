@@ -329,16 +329,10 @@ h2,
   line-height: 1.13em; /* 116.667% */
   letter-spacing: -0.1px;
 }
-@media (max-width: 1199px) {
+@media (max-width: 767px) {
   h2,
   .h2 {
-    font-size: 48px;
-  }
-}
-@media (max-width: 575px) {
-  h2,
-  .h2 {
-    font-size: 38px;
+    font-size: 42px;
   }
 }
 
@@ -2384,6 +2378,10 @@ header.hide-header {
   transform: translateY(-100%);
 }
 
+.header-logo {
+  text-align: left;
+}
+
 .uxora-footer-section {
   padding: 375px 0 0;
   position: relative;
@@ -3389,6 +3387,11 @@ ul#watch-filter-gallery li {
 .uxora-active-icon {
   flex-shrink: 0;
   transition: all 0.4s;
+}
+@media (max-width: 767px) {
+  .uxora-active-icon img {
+    width: 40px;
+  }
 }
 
 .faq-title {
@@ -4646,16 +4649,6 @@ blockquote span {
   position: relative;
   transition: all 0.4s;
 }
-@media (max-width: 991px) {
-  .pb-81 {
-    padding-bottom: 60px;
-  }
-}
-@media (max-width: 767px) {
-  .pb-81 {
-    padding-bottom: 40px;
-  }
-}
 .pb-81:hover .border-r2::before {
   opacity: 1;
 }
@@ -5009,6 +5002,20 @@ textarea::placeholder { /* Most modern browsers support this now. */
   }
 }
 
+.pb-24 {
+  padding-bottom: 106px;
+}
+@media (max-width: 991px) {
+  .pb-24 {
+    padding-bottom: 76px;
+  }
+}
+@media (max-width: 767px) {
+  .pb-24 {
+    padding-bottom: 36px;
+  }
+}
+
 .uxora-section-title {
   padding-bottom: 80px;
 }
@@ -5182,10 +5189,10 @@ textarea::placeholder { /* Most modern browsers support this now. */
   opacity: 1;
   transform: scaleX(1.5) scaleY(1.5);
 }
-.uxora-default-btn.portfolio-btn:hover,
-.uxora-subcribe-btn.portfolio-btn:hover,
-#uxora-submit-btn.portfolio-btn:hover {
-  border: 2px solid var(--white-color);
+.uxora-default-btn.portfolio-btn,
+.uxora-subcribe-btn.portfolio-btn,
+#uxora-submit-btn.portfolio-btn {
+  border: transparent;
 }
 .uxora-default-btn.uxora-header-btn,
 .uxora-subcribe-btn.uxora-header-btn,
@@ -5660,6 +5667,16 @@ a.current {
   gap: 15px;
   padding: 0 15px;
   padding-top: 50px;
+}
+@media (max-width: 991px) {
+  .uxora-mobile-menu-btn {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .uxora-mobile-menu-btn {
+    padding-top: 30px;
+  }
 }
 
 a.uxora-default-btn.sm-size {
