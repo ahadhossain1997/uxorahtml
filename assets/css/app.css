@@ -1796,10 +1796,8 @@ img {
   text-align: center;
 }
 
-.sticky-menu .uxora-header-top {
-  margin-top: -60px;
-  transition: all 0.4s;
-  opacity: 0;
+.uxora-header-section.sticky-menu {
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.04);
 }
 
 .uxora-header-info-data ul li {

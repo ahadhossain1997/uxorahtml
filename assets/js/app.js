@@ -68,6 +68,13 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   window.onresize = function (event) {
     sticky_header();
   };
+  $(window).on('scroll', function () {
+    if ($(window).scrollTop() > 50) {
+      $('#sticky-menu').addClass('sticky-menu');
+    } else {
+      $('#sticky-menu').removeClass('sticky-menu');
+    }
+  });
 
   /*--------------------------------------------------------------
   UXORA PROGRES CIRCLE JS INIT
