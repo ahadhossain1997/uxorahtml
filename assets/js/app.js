@@ -69,7 +69,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     sticky_header();
   };
   $(window).on('scroll', function () {
-    if ($(window).scrollTop() > 50) {
+    if ($(window).scrollTop() > 520) {
       $('#sticky-menu').addClass('sticky-menu');
     } else {
       $('#sticky-menu').removeClass('sticky-menu');

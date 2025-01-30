@@ -1780,11 +1780,15 @@ img {
 
 /*1.1 layout css*/
 .uxora-header-section {
-  position: absolute;
-  z-index: 99;
-  width: 100%;
-  top: 0;
   transition: all 0.4s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+  text-align: center;
 }
 @media (max-width: 991px) {
   .uxora-header-section {
@@ -1798,6 +1802,7 @@ img {
 
 .uxora-header-section.sticky-menu {
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.04);
+  background-color: var(--light-color2);
 }
 
 .uxora-header-info-data ul li {
@@ -2359,19 +2364,6 @@ a.light-color {
   transform: rotate(-90deg);
 }
 
-.uxora-header-section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: auto;
-  z-index: 10;
-  text-align: center;
-  transition: transform 0.5s ease;
-  background-color: var(--light-color2);
-}
-
 header.hide-header {
   transform: translateY(-100%);
 }
@@ -2669,13 +2661,8 @@ header.hide-header {
 
 .faq-shape {
   position: absolute;
-  bottom: -150px;
-  right: 20px;
-}
-@media (max-width: 1399px) {
-  .faq-shape {
-    right: 80px;
-  }
+  top: 230px;
+  right: 50px;
 }
 @media (max-width: 991px) {
   .faq-shape {
@@ -3390,11 +3377,6 @@ ul#watch-filter-gallery li {
   .uxora-active-icon img {
     width: 40px;
   }
-}
-
-.faq-title {
-  position: sticky;
-  top: 110px;
 }
 
 .tabs {
