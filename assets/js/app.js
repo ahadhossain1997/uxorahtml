@@ -20,7 +20,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   UXORA TAB CONTENT JS
   UXORA TOGGLE PASSOWRD JS INIT
   
-  
   -------------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
@@ -178,12 +177,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       }]
     });
   }
-  $(function () {
-
-    /*--------------------------------------------------------------
-    UXORA AOS ANIMATION JS INIT
-    --------------------------------------------------------------*/
-  }); /*End document ready*/
+  $(function () {}); /*End document ready*/
 
   $(window).on("resize", function () {}); // end window resize
 
